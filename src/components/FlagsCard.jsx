@@ -4,11 +4,14 @@ import SearchBar from './SearchBar';
 
 function FlagsCard() {
     const [flags, setFlags] = useState([]);
-
-    const getData = (e) => {
+    const [searchTerms, setSearch] = useState('')
+    const handleSearch = (e) => {
+        setSearch(e.target.value);
         console.log(e.target.value);
-
     }
+    const filteredFlags = flags.filter((flag) => {
+        return flag.name?.common?.toLowerCase().includes(searchTerms.toLocaleLowerCase())
+    })
 
     const fetchFlags = async () => {
         let res = await fetch('https://restcountries.com/v3.1/all');
@@ -23,9 +26,10 @@ function FlagsCard() {
 
     return (
         <>
+            <SearchBar getData={handleSearch} />
             <div className="flags-box w-full max-w-screen-2xl mx-auto bg-[#060708] mt-20 flex flex-wrap gap-4 justify-center items-center">
                 {
-                    flags.map((flag, index) => (
+                    filteredFlags.map((flag, index) => (
 
                         <div className="flag-container w-[280px] h-[180px] " key={index}>
                             <img
@@ -34,11 +38,8 @@ function FlagsCard() {
 
                             <div className="flag-overlay">{flag.name?.common}</div>
                         </div>
-
-
                     ))
                 }
-
             </div>
         </>
     );
