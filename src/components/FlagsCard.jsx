@@ -1,8 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import SearchBar from './SearchBar';
 
 function FlagsCard() {
     const [flags, setFlags] = useState([]);
+
+    const getData = (e) => {
+        console.log(e.target.value);
+
+    }
 
     const fetchFlags = async () => {
         let res = await fetch('https://restcountries.com/v3.1/all');
@@ -14,9 +20,10 @@ function FlagsCard() {
     useEffect(() => {
         fetchFlags()
     }, []);
+
     return (
         <>
-            <div className="flags-box w-full max-w-screen-2xl mx-auto bg-[#060708] mt-20 flex flex-wrap gap-5 justify-center items-center">
+            <div className="flags-box w-full max-w-screen-2xl mx-auto bg-[#060708] mt-20 flex flex-wrap gap-4 justify-center items-center">
                 {
                     flags.map((flag, index) => (
 

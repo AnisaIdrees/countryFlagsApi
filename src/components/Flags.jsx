@@ -1,22 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
 import FlagsCard from "./FlagsCard";
 
+
+
 function Flags() {
-  const [countries, setCountries] = useState([]);
-
-  const fetchCountry = async () => {
-    let res = await fetch("https://restcountries.com/v3.1/all");
-    let data = await res.json();
-    setCountries(data)
-    console.log(data);
-  };
-  useEffect(() => {
-    fetchCountry();
-  }, [])
-
-
   return (
     <>
       <div className="container-xxl bg-[#060708] h-full text-[white]">
@@ -26,7 +14,7 @@ function Flags() {
         </h1>
         <SearchBar />
 
-      <FlagsCard/>
+        <FlagsCard />
 
       </div>
     </>

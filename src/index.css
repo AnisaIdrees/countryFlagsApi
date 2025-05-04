@@ -8,13 +8,15 @@
 }
 
 @keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-/* search bar */
-/* From Uiverse.io by satyamchaudharydev */ 
-/* this is a recreation of twitter search in css */
 .form {
   --input-text-color: #fff;
   --input-bg-color: #283542;
@@ -25,6 +27,7 @@
   --inline-padding-of-input: 1.2em;
   --gap: 0.9rem;
 }
+
 /* form style */
 .form {
   font-size: 0.9rem;
@@ -35,8 +38,9 @@
   position: relative;
   isolation: isolate;
   margin: 0 auto;
-  margin-top: 50px                    ;
+  margin-top: 50px;
 }
+
 /* a fancy bg for showing background and border when focus. */
 .fancy-bg {
   position: absolute;
@@ -49,6 +53,7 @@
   pointer-events: none;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
 /* label styling */
 label {
   width: 100%;
@@ -59,19 +64,23 @@ label {
   align-items: center;
 }
 
-.search,.close-btn {
+.search,
+.close-btn {
   position: absolute;
 }
+
 /* styling search-icon */
 .search {
   fill: var(--text-color);
   left: var(--inline-padding-of-input);
 }
+
 /* svg -- size */
 svg {
   width: 17px;
   display: block;
 }
+
 /* styling of close button */
 .close-btn {
   border: none;
@@ -89,11 +98,12 @@ svg {
   opacity: 0;
   visibility: hidden;
 }
+
 /* styling of input */
 .input {
   color: var(--input-text-color);
   width: 100%;
-  margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+  margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
   background: none;
   border: none;
 }
@@ -105,20 +115,24 @@ svg {
 .input::placeholder {
   color: var(--text-color)
 }
+
 /* input background change in focus */
-.input:focus ~ .fancy-bg {
+.input:focus~.fancy-bg {
   border: 1px solid var(--active-color);
   background: var(--focus-input-bg-color);
 }
+
 /* search icon color change in focus */
-.input:focus ~ .search {
+.input:focus~.search {
   fill: var(--active-color);
 }
+
 /* showing close button when typing */
-.input:valid ~ .close-btn {
+.input:valid~.close-btn {
   opacity: 1;
   visibility: visible;
 }
+
 /* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -127,7 +141,8 @@ input:-webkit-autofill:active {
   -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
   -webkit-transition-delay: 9999s;
 }
-@media(max-width: 793PX){
+
+@media(max-width: 793PX) {
   .form {
     font-size: 0.9rem;
     display: flex;
@@ -137,11 +152,11 @@ input:-webkit-autofill:active {
     position: relative;
     isolation: isolate;
     margin: 0 auto;
-    margin-top: 50px                    ;
+    margin-top: 50px;
   }
 }
 
-@media(max-width: 437PX){
+@media(max-width: 437PX) {
   .form {
     font-size: 0.9rem;
     display: flex;
@@ -151,11 +166,11 @@ input:-webkit-autofill:active {
     position: relative;
     isolation: isolate;
     margin: 0 auto;
-    margin-top: 50px                    ;
+    margin-top: 50px;
   }
 }
 
-@media(max-width: 427PX){
+@media(max-width: 427PX) {
   .form {
     font-size: 0.9rem;
     display: flex;
@@ -165,11 +180,11 @@ input:-webkit-autofill:active {
     position: relative;
     isolation: isolate;
     margin: 0 auto;
-    margin-top: 50px                    ;
+    margin-top: 50px;
   }
 }
 
-@media(max-width: 373px){
+@media(max-width: 373px) {
   .form {
     font-size: 0.9rem;
     display: flex;
@@ -179,6 +194,6 @@ input:-webkit-autofill:active {
     position: relative;
     isolation: isolate;
     margin: 0 auto;
-    margin-top: 50px                    ;
+    margin-top: 50px;
   }
 }

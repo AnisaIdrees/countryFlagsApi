@@ -1,11 +1,12 @@
 import React from 'react'
+import FlagsCard from './FlagsCard'
 
 function SearchBar() {
   return (
   <>
           <form className="form">
           <label htmlFor="search">
-            <input className="input" type="text" required="" placeholder="Search here ..." id="search" />
+            <input className="input" type="text" required="" placeholder="Search here ..." id="search" onChange={getData} />
             <div className="fancy-bg"></div>
             <div className="search">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-4wgw6l r-f727ji r-bnwqim r-1plcrui r-lrvibr">
