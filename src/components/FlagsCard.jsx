@@ -27,7 +27,7 @@ function FlagsCard() {
     return (
         <>
             <SearchBar getData={handleSearch} />
-            <div className="flags-box w-full max-w-screen-2xl mx-auto bg-[#060708] mt-20 flex flex-wrap gap-4 justify-center items-center">
+            <div className="flags-box w-full max-w-screen-2xl mx-auto  mt-20 flex flex-wrap gap-4 justify-center items-center">
                 {
                     filteredFlags.map((flag, index) => (
 

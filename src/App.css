@@ -47,3 +47,22 @@
 .flag-container:hover .flag-overlay {
     opacity: 1;
 }
+.flags-box{
+    background-image: url(https://i.pinimg.com/originals/f6/78/34/f67834aa66ac95e7901fa0528fae6840.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* detail container */
+.detail-container{
+    background-image: url(https://i.pinimg.com/originals/f6/78/34/f67834aa66ac95e7901fa0528fae6840.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.flagPage{
+    background-image: url(https://i.pinimg.com/originals/f6/78/34/f67834aa66ac95e7901fa0528fae6840.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
