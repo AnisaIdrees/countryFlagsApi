@@ -1,4 +1,15 @@
 import React from 'react'
+import MiniCard from './MiniCard'
+import { GrLanguage } from "react-icons/gr";
+import { FaPersonHarassing } from "react-icons/fa6";
+import { MdOutlineReduceCapacity } from "react-icons/md";
+import { LuLanguages } from "react-icons/lu";
+import { TbTimezone } from "react-icons/tb";
+import { BsCurrencyExchange } from "react-icons/bs";
+import { MdAddHomeWork } from "react-icons/md";
+import { GiModernCity } from "react-icons/gi";
+import Map from './Map';
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 function DetailPage() {
   return (
@@ -14,10 +25,61 @@ function DetailPage() {
                 className='h-[100%] w-[100%]' />
             </div>
           </div>
-          <p className='text-center text-[20px]'>The flag of Tonga has a red field. A white rectangle bearing a red Greek cross is superimposed in the canton.</p>
+          <p className='text-center  p-4 text-[17px] '>
+            The flag of Tonga has a red field. A white rectangle
+            bearing a red Greek cross is superimposed in the canton.</p>
+
+          <div className="miniCard-container flex gap-4 flex-wrap justify-center items-center">
+
+            <MiniCard
+              icon={< MdOutlineReduceCapacity className='text-[90px] w-11 text-[#0062ff]' />}
+              title={'Population'}
+              value={'hswhmv'}
+            />
+
+            <MiniCard
+              icon={< MdAddHomeWork className='text-[90px] w-11 text-[#0062ff]' />}
+              title={'Area'}
+              value={'hswhmv'}
+            />
+
+            <MiniCard
+              icon={<TbTimezone className='text-[90px] w-11 text-[#0062ff]' />}
+              title={'Timezone'}
+              value={'hswhmv'}
+            />
+
+            <MiniCard
+              icon={<LuLanguages className='text-[90px] w-11 text-[#0062ff]' />}
+              title={'Language'}
+              value={'hswhmv'}
+            />
+
+            <MiniCard
+              icon={<BsCurrencyExchange className='text-[90px] w-11 text-[#0062ff]' />}
+              title={'Currency'}
+              value={'hswhmv'}
+            />
+
+            <MiniCard
+              icon={<GiModernCity className='text-[90px] w-11 text-[#0062ff]' />}
+              title={'Capital'}
+              value={'hswhmv'}
+            />
+            <MiniCard
+              icon={<GrLanguage className='text-[90px] w-11 text-[#0062ff]' />}
+              title={'Region'}
+              value={'hswhmv'}
+            />
+          </div>
+
+
+
+          <Map lat={country.latlng[0]} lng={country.latlng[1]} country={country.name.common} />
+
+
 
         </div>
-
       </div>
 
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
 function FlagsCard() {
     const [flags, setFlags] = useState([]);
@@ -27,20 +28,30 @@ function FlagsCard() {
     return (
         <>
             <SearchBar getData={handleSearch} />
-            <div className="flags-box w-full max-w-screen-2xl mx-auto  mt-20 flex flex-wrap gap-4 justify-center items-center">
-                {
-                    filteredFlags.map((flag, index) => (
 
+         
+            <div className="flags-box w-full max-w-screen-2xl mx-auto  mt-20 flex flex-wrap gap-4 justify-center items-center">
+                
+               
+                {
+                
+                    filteredFlags.map((flag, index) => (
+                      
                         <div className="flag-container w-[280px] h-[180px] " key={index}>
+                              <Link to={`/Country/${flag?.cca3}`}>
                             <img
                                 src={flag.flags?.png}
                                 alt={flag.flags?.alt} />
 
                             <div className="flag-overlay">{flag.name?.common}</div>
+                            </Link>
                         </div>
+                       
                     ))
                 }
+               
             </div>
+      
         </>
     );
 
