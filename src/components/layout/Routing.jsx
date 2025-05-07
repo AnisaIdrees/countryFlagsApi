@@ -14,22 +14,21 @@ function Routing() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Flags />}>
-        <Route path="/" element={<Flags />} />
-        <Route  loader ={({params})=> fetchSingleFlag(params) } path="/detailFlag" element={<DetailPage/>}/>
-        <Route path="*" element={<PageNotFound/>}/>
+        <Route  path="/Country/:cca3" element={<DetailPage />} />
+        <Route path="*" element={<PageNotFound />} />
       </Route>
     )
   );
 
-  return(
+  return (
     <>
-  <RouterProvider router ={router } fallBackElement={<h1>loading ...1</h1>}/>
+      <RouterProvider router={router} fallBackElement={<h1>loading ...1</h1>} />
 
- 
-  </>
-  ) 
-  
-  
+
+    </>
+  )
+
+
 }
 
 export default Routing;

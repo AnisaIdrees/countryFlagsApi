@@ -14,7 +14,7 @@ function Flags() {
           {" "}
           Welcome to<span className=" world  text-[3rem] sm:text-[4rem] md:text-[7rem] lg:text-[8rem]">🌍</span>Flags Explore
         </h1>
-<SearchBar/>
+
         <FlagsCard />
 
 
