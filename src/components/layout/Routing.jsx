@@ -2,7 +2,7 @@ import React from "react";
 import Flags from "../Flags";
 import DetailPage from "../DetailPage";
 import PageNotFound from "./PageNotFound";
-import App from "../../App";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -13,10 +13,11 @@ import {
 function Routing() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Flags />}>
-        <Route  path="/Country/:cca3" element={<DetailPage />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Route>
+      <>
+      <Route path="/" element={<Flags />} />
+      <Route path="/Country/:cca3" element={<DetailPage />} />
+      <Route path="*" element={<PageNotFound />} />
+    </>
     )
   );
 

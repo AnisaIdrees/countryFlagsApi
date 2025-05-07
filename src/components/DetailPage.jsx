@@ -13,7 +13,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useParams } from 'react-router-dom';
 
 function DetailPage() {
-  const { cca3 } = useParams;
+  const { cca3 } = useParams();
   const [country, setcountry] = useState({});
 
   useEffect(() => {
@@ -21,8 +21,8 @@ function DetailPage() {
     const fetchSingleFlag = async () => {
       try {
         const res = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`)
-        const data = await res.data()
-        setcountry(data)
+        const data = await res.json()
+        setcountry(data[0])
       } catch (error) {
         console.log('detail error', error);
 
