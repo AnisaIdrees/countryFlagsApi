@@ -10,7 +10,7 @@ function Map({ lat, lng, country }) {
   }
 
   return (
-    <div className="map-wrapper p-2 bg-[white] mt-5" >
+    <div className="map-wrapper p-2 bg-[white] mt-5 mb-5" >
     <MapContainer center={[lat, lng]} zoom={5} scrollWheelZoom={true} className="map-container ">
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'

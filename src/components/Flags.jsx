@@ -1,6 +1,6 @@
 import React from "react";
 import FlagsCard from "./FlagsCard";
-import { useState, useEffect,CSSProperties } from "react";
+import { useState, useEffect, CSSProperties } from "react";
 import { PuffLoader } from "react-spinners";
 
 
@@ -21,16 +21,15 @@ function Flags() {
     <>
       {
         loading ?
-        <div className="div w-[100%] h-sreen bg-black]">
-          <PuffLoader
-            color={'red'}
-            loading={loading}
-            className="flex"
-
-            size={150}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
+          <div className="w-full h-[100vh] bg-[black] flex justify-center items-center">
+            <PuffLoader
+              color={'blue'}
+              loading={loading}
+              className="flex"
+              size={150}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
           </div>
           :
           <div className="flagPage container-xxl  h-full text-[white]">

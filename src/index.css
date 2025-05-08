@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body{
+  background-color: black;
+}
 .world {
   display: inline-block;
   animation: rotate 8s linear infinite;
