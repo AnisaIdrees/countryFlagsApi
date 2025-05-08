@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import MiniCard from './MiniCard'
 import { GrLanguage } from "react-icons/gr";
-import { FaPersonHarassing } from "react-icons/fa6";
 import { MdOutlineReduceCapacity } from "react-icons/md";
 import { LuLanguages } from "react-icons/lu";
 import { TbTimezone } from "react-icons/tb";
@@ -9,7 +8,6 @@ import { BsCurrencyExchange } from "react-icons/bs";
 import { MdAddHomeWork } from "react-icons/md";
 import { GiModernCity } from "react-icons/gi";
 import Map from './Map';
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useParams } from 'react-router-dom';
 
 function DetailPage() {
@@ -46,7 +44,7 @@ function DetailPage() {
             </div>
           </div>
           <p className='text-center  p-4 text-[17px] '>{country?.flags?.alt} </p>
-         
+
 
           <div className="miniCard-container flex gap-4 flex-wrap justify-center items-center">
 
@@ -71,13 +69,13 @@ function DetailPage() {
             <MiniCard
               icon={<LuLanguages className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Language'}
-              value={Object.values(country?.languages || {})[0]|| 'not found'}
+              value={Object.values(country?.languages || {})[0] || 'not found'}
             />
 
             <MiniCard
               icon={<BsCurrencyExchange className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Currency'}
-              value={ country?.currencies
+              value={country?.currencies
                 ? Object.values(country.currencies)[0]?.name || 'not found'
                 : 'not found'}
             />
@@ -94,25 +92,17 @@ function DetailPage() {
             />
           </div>
 
-
-
-          {/* <Map lat={country?.latlng[0]} lng={country?.latlng[1]} country={country?.name?.common} />
-          {country?.latlng && country.latlng.length === 2 && (
-  <Map lat={country.latlng[0]} lng={country.latlng[1]} country={country?.name?.common} />
-)} */}
-<Map
-  lat={country?.latlng?.[0] || 0}
-  lng={country?.latlng?.[1] || 0}
-  country={country?.name?.common || 'Unknown Country'}
-/>
-
-
-
+          {country?.latlng?.[0] && country?.latlng?.[1] ? (
+            <Map
+              lat={country.latlng[0]}
+              lng={country.latlng[1]}
+              country={country.name?.common || 'Unknown Country'}
+            />
+          ) : (
+            <p>Location data is not available.</p>
+          )}
         </div>
       </div>
-
-
-
     </>
   )
 }
