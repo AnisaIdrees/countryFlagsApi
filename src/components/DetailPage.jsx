@@ -34,10 +34,10 @@ function DetailPage() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 2000)
+    }, 3500)
   }, [])
 
-  // if (!country) return <h1 className='text-white text-center'>Loading...</h1>;
+
 
   return (
     <>

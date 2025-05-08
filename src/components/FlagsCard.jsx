@@ -4,36 +4,43 @@ import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
 
 function FlagsCard() {
+
     const [currentPage, setCurrentPage] = useState(1);
     const [flags, setFlags] = useState([]);
     const [searchTerms, setSearch] = useState('')
+
     const handleSearch = (e) => {
         setSearch(e.target.value);
         console.log(e.target.value);
+        setCurrentPage(1);
     }
     const filteredFlags = flags.filter((flag) => {
         return flag.name?.common?.toLowerCase().includes(searchTerms.toLocaleLowerCase())
     })
 
     const fetchFlags = async () => {
-        let res = await fetch('https://restcountries.com/v3.1/all');
-        let data = await res.json();
+        try {
 
-        setFlags(data)
-        console.log(data);
-        console.log(res.data, 'data fetch me masla ');
+            let res = await fetch('https://restcountries.com/v3.1/all');
+            let data = await res.json();
+            setFlags(data)
+            console.log(data);
 
+        } catch (error) {
+            console.log(error, 'data fetch me masla ');
+        }
     }
 
     useEffect(() => {
         fetchFlags()
     }, []);
+
     // pagination
     const perPage = 8;
-    const lastIndex = currentPage * perPage
-    const firstIndex = lastIndex - perPage
-    const currentFlags = filteredFlags.slice(firstIndex, lastIndex);
-    const totalPages = Math.ceil(filteredFlags.length / perPage); // Calculate total pages
+    const startIndex = (currentPage - 1) * perPage;
+    const endIndex = startIndex + perPage;
+    const currentFlags = filteredFlags.slice(startIndex, endIndex);
+    const totalPages = Math.ceil(filteredFlags.length / perPage);
 
     return (
         <>
