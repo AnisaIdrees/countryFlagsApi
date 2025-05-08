@@ -45,7 +45,7 @@ function DetailPage() {
                 className='h-[100%] w-[100%]' />
             </div>
           </div>
-          <p className='text-center  p-4 text-[17px] '>{country.flags?.alt} </p>
+          <p className='text-center  p-4 text-[17px] '>{country?.flags?.alt} </p>
          
 
           <div className="miniCard-container flex gap-4 flex-wrap justify-center items-center">
@@ -53,48 +53,58 @@ function DetailPage() {
             <MiniCard
               icon={< MdOutlineReduceCapacity className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Population'}
-              value={country.populations}
+              value={country?.population}
             />
 
             <MiniCard
               icon={< MdAddHomeWork className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Area'}
-              value={'hswhmv'}
+              value={country?.area}
             />
 
             <MiniCard
               icon={<TbTimezone className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Timezone'}
-              value={'hswhmv'}
+              value={country?.timezones}
             />
 
             <MiniCard
               icon={<LuLanguages className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Language'}
-              value={'hswhmv'}
+              value={Object.values(country?.languages || {})[0]|| 'not found'}
             />
 
             <MiniCard
               icon={<BsCurrencyExchange className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Currency'}
-              value={'hswhmv'}
+              value={ country?.currencies
+                ? Object.values(country.currencies)[0]?.name || 'not found'
+                : 'not found'}
             />
 
             <MiniCard
               icon={<GiModernCity className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Capital'}
-              value={'hswhmv'}
+              value={country?.capital?.[0] || 'N/A'}
             />
             <MiniCard
               icon={<GrLanguage className='text-[90px] w-11 text-[#0062ff]' />}
               title={'Region'}
-              value={'hswhmv'}
+              value={country?.region}
             />
           </div>
 
 
 
-          <Map lat={country.latlng[0]} lng={country.latlng[1]} country={country.name.common} />
+          {/* <Map lat={country?.latlng[0]} lng={country?.latlng[1]} country={country?.name?.common} />
+          {country?.latlng && country.latlng.length === 2 && (
+  <Map lat={country.latlng[0]} lng={country.latlng[1]} country={country?.name?.common} />
+)} */}
+<Map
+  lat={country?.latlng?.[0] || 0}
+  lng={country?.latlng?.[1] || 0}
+  country={country?.name?.common || 'Unknown Country'}
+/>
 
 
 
