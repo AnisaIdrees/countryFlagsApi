@@ -8,13 +8,13 @@ import { BsCurrencyExchange } from "react-icons/bs";
 import { MdAddHomeWork } from "react-icons/md";
 import { GiModernCity } from "react-icons/gi";
 
-function MiniCard({icon , title, value}) {
- 
+function MiniCard({ icon, title, value }) {
+
     return (
         <>
             <div className="card w-[250px] h-[100px] bg-[#292926] rounded-[15px] flex-row gap-4 justify-center items-center">
                 <div className="iconBox">
-                {icon}    {/* < MdOutlineReduceCapacity className='text-[90px] w-11 text-[#0062ff]' /> */}
+                    {icon}
                 </div>
                 <div className="textBox">
                     <h1 className='text-[23px] font-bold text-[white]'>{title}</h1>

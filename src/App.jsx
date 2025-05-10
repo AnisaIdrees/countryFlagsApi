@@ -7,8 +7,6 @@ function App() {
   return (
     <>
       <Routing />
-      {/* <Flags /> */}
-      {/* <Map/> */}
     </>
   );
 }

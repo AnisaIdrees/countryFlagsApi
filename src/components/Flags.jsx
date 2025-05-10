@@ -9,7 +9,7 @@ import { PuffLoader } from "react-spinners";
 
 function Flags() {
   const [loading, setLoading] = useState(false);
-  
+
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
