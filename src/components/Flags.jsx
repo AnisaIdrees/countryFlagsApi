@@ -14,7 +14,7 @@ function Flags() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 300)
+    }, 6000)
   }, [])
 
   return (
